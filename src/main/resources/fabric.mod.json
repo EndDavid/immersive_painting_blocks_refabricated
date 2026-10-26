@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "imb",
+	"version": "${version}",
+	"name": "Immersive Painting Blocks Refabricated",
+	"description": "Convert Immersive Paintings graffiti into static, solid blocks.",
+	"authors": [
+		"FoxyNoTail",
+		"EnderDavid (Fabric port)"
+	],
+	"contact": {
+		"homepage": "https://github.com/foxynotail/immersive_painting_blocks",
+		"sources": "https://github.com/foxynotail/immersive_painting_blocks"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/imb/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.imb.IMBMod"
+		],
+		"client": [
+			"com.imb.IMBClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.14.0",
+		"minecraft": "~1.18.2",
+		"java": ">=17",
+		"fabric-api": "*",
+		"immersive_paintings": ">=0.6.7"
+	}
+}

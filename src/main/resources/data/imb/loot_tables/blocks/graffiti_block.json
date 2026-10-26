@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "name": "immersive_paintings:glow_graffiti",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "imb:graffiti_block",
+                  "properties": {
+                    "glowing": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "immersive_paintings:graffiti"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "minecraft:survives_explosion"
+    }
+  ]
+}
+

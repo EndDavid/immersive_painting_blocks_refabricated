@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "immersive_paintings:graffiti"
+    },
+    {
+      "item": "create:super_glue"
+    }
+  ],
+  "result": {
+    "item": "imb:graffiti_converter_item"
+  }
+}
+
