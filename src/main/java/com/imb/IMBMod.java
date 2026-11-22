@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
  * Common (server + client) entrypoint.
  *
  * Port of https://github.com/foxynotail/immersive_painting_blocks (1.21.1 NeoForge)
- * to 1.18.2 Fabric, running on top of Immersive Paintings 1.18.2.
+ * to 1.20.1 Fabric, running on top of Immersive Paintings 1.20.1.
  */
 public class IMBMod implements ModInitializer {
     public static final String MODID = "imb";

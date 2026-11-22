@@ -15,6 +15,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -58,7 +59,7 @@ public final class IMBEvents {
 
         boolean glowing = target instanceof ImmersiveGlowGraffitiEntity
                 || "glow_graffiti".equals(
-                net.minecraft.util.registry.Registry.ENTITY_TYPE.getId(target.getType()).getPath());
+                Registries.ENTITY_TYPE.getId(target.getType()).getPath());
 
         // Offset from the anchor block centre to the entity's visual centre.
         double shiftX = painting.getX() - (anchor.getX() + 0.5D);
@@ -84,7 +85,7 @@ public final class IMBEvents {
     }
 
     private static boolean canPlaceAt(World world, BlockPos pos) {
-        return world.getBlockState(pos).getMaterial().isReplaceable()
+        return world.getBlockState(pos).isReplaceable()
                 || world.getBlockState(pos).isOf(IMBBlocks.GRAFFITI_BLOCK);
     }
 

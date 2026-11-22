@@ -3,7 +3,7 @@ package com.imb.config;
 /**
  * Client side settings.
  *
- * The NeoForge original used a {@code ModConfigSpec} for a single value. Fabric 1.18.2 has no
+ * The NeoForge original used a {@code ModConfigSpec} for a single value. Fabric 1.20.1 has no
  * built-in config API, so the render distance is a plain constant for now (can be replaced by a
  * JSON/cloth-config based implementation later).
  */

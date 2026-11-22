@@ -15,8 +15,8 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.Matrix4f;
-import net.minecraft.util.math.Vec3f;
+import net.minecraft.util.math.RotationAxis;
+import org.joml.Matrix4f;
 
 /**
  * Draws the converted graffiti as a stack of thin quads, one per thickness layer.
@@ -38,11 +38,12 @@ public class GraffitiBlockEntityRenderer implements BlockEntityRenderer<Graffiti
             return;
         }
 
-        Identifier texture = ClientPaintingManager
-                .getPaintingTexture(motive, Painting.Type.FULL)
-                .textureIdentifier;
+        Painting.Texture texture = ClientPaintingManager.getPaintingTexture(motive, Painting.Type.FULL);
+        if (texture == null) {
+            return;
+        }
 
-        VertexConsumer consumer = vertexConsumers.getBuffer(RenderLayer.getEntityTranslucent(texture));
+        VertexConsumer consumer = vertexConsumers.getBuffer(RenderLayer.getEntityTranslucent(texture.textureIdentifier));
 
         Direction facing = blockEntity.getCachedState().get(GraffitiBlock.FACING);
         int width = blockEntity.getPaintingWidth();
@@ -63,16 +64,16 @@ public class GraffitiBlockEntityRenderer implements BlockEntityRenderer<Graffiti
         switch (facing) {
             case SOUTH -> {
             }
-            case WEST -> matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(270.0F));
-            case NORTH -> matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(180.0F));
-            case EAST -> matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(90.0F));
+            case WEST -> matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(270.0F));
+            case NORTH -> matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(180.0F));
+            case EAST -> matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(90.0F));
             case UP -> {
-                matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(-90.0F));
-                matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(-yaw));
+                matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90.0F));
+                matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(-yaw));
             }
             case DOWN -> {
-                matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(90.0F));
-                matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(yaw));
+                matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(90.0F));
+                matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(yaw));
             }
         }
 
