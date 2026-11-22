@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "imb",
 	"version": "${version}",
-	"name": "Immersive Painting Blocks Refabricated",
+	"name": "Immersive Painting Blocks: Refabricated",
 	"description": "Convert Immersive Paintings graffiti into static, solid blocks.",
 	"authors": [
 		"FoxyNoTail",
