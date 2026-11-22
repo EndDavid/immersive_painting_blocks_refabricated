@@ -1,12 +1,12 @@
-# Immersive Painting Blocks — Fabric 1.20.1
+# Immersive Painting Blocks: Refabricated — Fabric 1.20.1
 
 A Fabric port of [foxynotail/immersive_painting_blocks](https://github.com/foxynotail/immersive_painting_blocks)
 (originally NeoForge 1.21.1), built on top of
 [Immersive Paintings](https://github.com/Luke100000/ImmersivePaintings) 1.20.1.
 
-The mod id stays `imb` and the display name stays **Immersive Painting Blocks**, exactly like the
-upstream addon, so block/item ids are unchanged (`imb:graffiti_block`,
-`imb:graffiti_converter_item`, `imb:graffiti_block_entity`).
+The mod id stays `imb`, exactly like the upstream addon, so block/item ids are unchanged
+(`imb:graffiti_block`, `imb:graffiti_converter_item`, `imb:graffiti_block_entity`). The display
+name of this Fabric port is **Immersive Painting Blocks: Refabricated**.
 
 ## Branch layout
 
